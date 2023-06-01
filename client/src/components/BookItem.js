@@ -7,7 +7,7 @@ import "../stylesheet/pages/_AdminView.scss"
 //recives props (books, onAddToCart) from BookList.
 
 function BookItem({ book, onAddToCart }) {
-  const [quantity, setQuantity] = useState("");
+  const [quantity, setQuantity] = useState(0);
 
   const addToCart = () => {
     if (quantity > 0) {
@@ -45,6 +45,7 @@ function BookItem({ book, onAddToCart }) {
             value={quantity}
             onChange={handleQuantityChange}
           />
+
           <button id="amount-btn-minus" onClick={() => setQuantity(quantity - 1)}>-</button>
           <button id="amount-btn" onClick={() => setQuantity(quantity + 1)}>+</button>
           <button id="order-btn" onClick={addToCart}>Order</button>
